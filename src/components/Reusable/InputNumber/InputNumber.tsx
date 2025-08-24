@@ -1,8 +1,8 @@
 import React from "react";
-import { UseFormRegister, FieldError } from "react-hook-form";
+import { FieldError, UseFormRegister } from "react-hook-form";
 
 // New props for validation and error
-interface InputTextProps {
+interface InputNumberProps {
   register: UseFormRegister<any>;
   name: string;
   lable?: string;
@@ -11,7 +11,7 @@ interface InputTextProps {
   error?: FieldError;
 }
 
-const InputText: React.FC<InputTextProps> = ({
+const InputNumber: React.FC<InputNumberProps> = ({
   register,
   name,
   lable,
@@ -23,8 +23,10 @@ const InputText: React.FC<InputTextProps> = ({
     <div className="flex flex-col space-y-1">
       <label htmlFor={name}>{lable}</label>
       <input
-        // Pass the validation rules here
-        {...register(name, validation)}
+        {...register(name, {
+          valueAsNumber: true,
+          ...validation,
+        })}
         id={name}
         className={`border border-gray-200 rounded focus:outline-none p-2 ${classname} ${
           error ? "border-red-500" : ""
@@ -36,4 +38,4 @@ const InputText: React.FC<InputTextProps> = ({
   );
 };
 
-export default InputText;
+export default InputNumber;

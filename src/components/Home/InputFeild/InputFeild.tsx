@@ -7,6 +7,7 @@ type Inputs = {
   user_frist_name: string;
   user_last_name: string;
   product_price: number;
+  v: number;
 };
 
 const InputFeild = () => {
@@ -56,13 +57,16 @@ const InputFeild = () => {
           lable="Product Price"
           validation={{
             required: "Product Price is required.",
-            pattern: {
-              value: /^(0*[1-9]\d*(\.\d+)?|0*\.\d+)$/,
-              message: "Invalid Number.",
+            setValueAs: (v: string) => (v === "" ? undefined : Number(v)),
+            validate: (v: number) => {
+              if (isNaN(v)) return "Price must be a valid number";
+              if (v <= 0) return "Price must be greater than 0";
+              return true;
             },
           }}
           error={errors.product_price}
         />
+
         <button
           type="submit"
           className="cursor-pointer py-2 px-5 rounded border border-gray-200 mt-5"

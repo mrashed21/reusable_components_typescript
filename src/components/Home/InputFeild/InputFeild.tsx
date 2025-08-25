@@ -14,7 +14,7 @@ const InputFeild = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({ mode: "onChange" });
 
   const handleSubmitData = (data: Inputs) => {
     console.log(data);

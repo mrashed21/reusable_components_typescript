@@ -1,5 +1,6 @@
 "use client";
 import InputNumber from "@/components/Reusable/InputNumber/InputNumber";
+import InputPassword from "@/components/Reusable/InputPassword/InputPassword";
 import InputText from "@/components/Reusable/InputText/InputText";
 import { useForm } from "react-hook-form";
 
@@ -8,6 +9,7 @@ type Inputs = {
   user_last_name: string;
   product_price: number;
   v: number;
+  user_password: string;
 };
 
 const InputFeild = () => {
@@ -66,7 +68,31 @@ const InputFeild = () => {
           }}
           error={errors.product_price}
         />
-        
+
+        {/* Password input */}
+        <InputPassword
+          register={register}
+          name="user_password"
+          lable="Password"
+          validation={{
+            required: "Password is required.",
+            validate: {
+              minLength: (v: string) =>
+                v.length >= 8 || "Password must be at least 8 characters",
+              hasUpper: (v: string) =>
+                /[A-Z]/.test(v) || "Must contain at least 1 uppercase letter",
+              hasLower: (v: string) =>
+                /[a-z]/.test(v) || "Must contain at least 1 lowercase letter",
+              hasNumber: (v: string) =>
+                /\d/.test(v) || "Must contain at least 1 number",
+              hasSpecial: (v: string) =>
+                /[@$!%*?&]/.test(v) ||
+                "Must contain at least 1 special character",
+            },
+          }}
+          error={errors.user_password}
+        />
+
         <button
           type="submit"
           className="cursor-pointer py-2 px-5 rounded border border-gray-200 mt-5"

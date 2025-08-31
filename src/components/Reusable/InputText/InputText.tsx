@@ -6,6 +6,7 @@ interface InputTextProps {
   register: UseFormRegister<any>;
   name: string;
   lable?: string;
+  placeholder?: string;
   classname?: string;
   validation?: Record<string, any>;
   error?: FieldError;
@@ -15,6 +16,7 @@ const InputText: React.FC<InputTextProps> = ({
   register,
   name,
   lable,
+  placeholder,
   classname,
   validation,
   error,
@@ -26,6 +28,7 @@ const InputText: React.FC<InputTextProps> = ({
         // Pass the validation rules here
         {...register(name, validation)}
         id={name}
+        placeholder={placeholder}
         className={`border border-gray-200 rounded focus:outline-none p-2 ${classname} ${
           error ? "border-red-500" : ""
         }`}

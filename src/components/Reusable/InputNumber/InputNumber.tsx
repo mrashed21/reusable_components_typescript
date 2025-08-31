@@ -6,6 +6,7 @@ interface InputNumberProps {
   register: UseFormRegister<any>;
   name: string;
   lable?: string;
+  placeholder?: string;
   classname?: string;
   validation?: Record<string, any>;
   error?: FieldError;
@@ -16,6 +17,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
   name,
   lable,
   classname,
+  placeholder,
   validation,
   error,
 }) => {
@@ -28,6 +30,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
           ...validation,
         })}
         id={name}
+        placeholder={placeholder}
         className={`border border-gray-200 rounded focus:outline-none p-2 ${classname} ${
           error ? "border-red-500" : ""
         }`}

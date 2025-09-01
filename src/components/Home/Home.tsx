@@ -5,7 +5,7 @@ const Home = () => {
   return (
     // if no need class then leave empty class
     <Container className=""> 
-      <><InputFeild/></>
+    <InputFeild/>
     </Container>
   );
 };

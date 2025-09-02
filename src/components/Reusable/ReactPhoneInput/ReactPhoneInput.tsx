@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { FieldError, UseFormRegister, UseFormSetValue } from "react-hook-form";
 import PhoneInput, {

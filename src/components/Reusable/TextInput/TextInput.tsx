@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { UseFormRegister, FieldError } from "react-hook-form";
 
 // New props for validation and error
-interface InputTextProps {
+interface TextInputProps {
   register: UseFormRegister<any>;
   name: string;
   lable?: string;
@@ -12,7 +13,7 @@ interface InputTextProps {
   error?: FieldError;
 }
 
-const InputText: React.FC<InputTextProps> = ({
+const TextInput: React.FC<TextInputProps> = ({
   register,
   name,
   lable,
@@ -39,4 +40,4 @@ const InputText: React.FC<InputTextProps> = ({
   );
 };
 
-export default InputText;
+export default TextInput;

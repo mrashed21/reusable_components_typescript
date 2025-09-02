@@ -1,8 +1,9 @@
 "use client";
-import InputNumber from "@/components/Reusable/InputNumber/InputNumber";
-import InputPassword from "@/components/Reusable/InputPassword/InputPassword";
-import InputText from "@/components/Reusable/InputText/InputText";
+
+import NumberInput from "@/components/Reusable/NumberInput/NumberInput";
+import PasswordInput from "@/components/Reusable/PasswordInput/PasswordInput";
 import ReactPhoneInput from "@/components/Reusable/ReactPhoneInput/ReactPhoneInput";
+import TextInput from "@/components/Reusable/TextInput/TextInput";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -10,7 +11,7 @@ type Inputs = {
   user_first_name: string;
   user_last_name: string;
   product_price: number;
-  user_phone: string; 
+  user_phone: string;
   user_password: string;
 };
 
@@ -39,7 +40,7 @@ const InputField = () => {
   return (
     <section className="mt-20">
       <form onSubmit={handleSubmit(handleSubmitData)}>
-        <InputText
+        <TextInput
           register={register}
           name="user_first_name"
           lable="First Name"
@@ -54,7 +55,7 @@ const InputField = () => {
           error={errors.user_first_name}
         />
 
-        <InputText
+        <TextInput
           register={register}
           name="user_last_name"
           lable="Last Name"
@@ -69,7 +70,7 @@ const InputField = () => {
           error={errors.user_last_name}
         />
 
-        <InputNumber
+        <NumberInput
           register={register}
           name="product_price"
           lable="Product Price"
@@ -102,7 +103,7 @@ const InputField = () => {
         />
 
         {/* Password input */}
-        <InputPassword
+        <PasswordInput
           register={register}
           name="user_password"
           lable="Password"

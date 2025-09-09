@@ -88,6 +88,7 @@ const InputField = () => {
         />
 
         {/* Phone input with real-time validation */}
+
         <ReactPhoneInput
           label="Phone Number"
           register={register}
@@ -103,6 +104,7 @@ const InputField = () => {
         />
 
         {/* Password input */}
+        
         <PasswordInput
           register={register}
           name="user_password"

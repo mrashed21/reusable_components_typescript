@@ -40,6 +40,7 @@ const InputField = () => {
   return (
     <section className="mt-20">
       <form onSubmit={handleSubmit(handleSubmitData)}>
+
         <TextInput
           register={register}
           name="user_first_name"
@@ -134,6 +135,7 @@ const InputField = () => {
         >
           Submit
         </button>
+        
       </form>
     </section>
   );

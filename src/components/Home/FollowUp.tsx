@@ -1,5 +1,5 @@
 const FollowUp = () => {
-  return <section>FollowUp</section>;
+  return <section>1</section>;
 };
 
 export default FollowUp;

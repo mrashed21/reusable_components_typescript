@@ -1,11 +1,5 @@
 const FollowUp = () => {
-  return <section>1
-  
-  234
-  </section>;
+  return <section>123</section>;
 };
-
-
-
 
 export default FollowUp;
